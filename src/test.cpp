@@ -5,13 +5,19 @@ using
 	std::cout,
 	std::endl;
 
-auto SayHelloWorld() -> void
+template<typename T>
+requires
+	requires(T &t)
+	{
+		cout<<t;
+	}
+auto SayAny(T &&t) -> void
 {
-	cout<<"Hello world!"<<endl;
+	cout<<"I'm say: "<<std::forward<T>(t)<<endl;
 }
 
 auto main() -> int
 {
-	SayHelloWorld();
+	SayAny("Hello there!");
 	return EXIT_SUCCESS;
 }
