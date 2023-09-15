@@ -5,8 +5,13 @@ using
 	std::cout,
 	std::endl;
 
-auto main() -> int
+auto SayHelloWorld() -> void
 {
 	cout<<"Hello world!"<<endl;
+}
+
+auto main() -> int
+{
+	SayHelloWorld();
 	return EXIT_SUCCESS;
 }
